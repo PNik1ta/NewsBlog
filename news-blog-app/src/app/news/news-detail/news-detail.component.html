@@ -1,0 +1,16 @@
+<div class="news" *ngIf="news$ | async as news; else loader">
+	<div class="news__image">
+		<img [src]="news.imageUrl" alt="news preview">
+	</div>
+	<div class="news__content">
+		<h1 class="news__title">{{news.title}}</h1>
+		<p class="news__text">{{news.summary}}</p>
+		<a class="news__link" routerLink="/news">
+			<- Back to homepage</a>
+	</div>
+</div>
+
+
+<ng-template #loader>
+	<app-loader></app-loader>
+</ng-template>

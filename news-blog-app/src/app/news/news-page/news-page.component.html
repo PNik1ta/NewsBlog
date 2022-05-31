@@ -1,0 +1,27 @@
+<div class="news">
+	<h3>Filter by keywords</h3>
+	<app-search (searchEmitter)="onUpdateSearch($event)"></app-search>
+
+	<h3>Results: </h3>
+
+	<div class="news-cards" *ngIf="news$ | async as news; else loader">
+		<a [routerLink]="['/news', newsItem.id]" class="news-card" *ngFor="let newsItem of news">
+			<div class="news-card__image">
+				<img [src]="newsItem.imageUrl" alt="news preview">
+			</div>
+			<div class="news-card__content">
+				<div class="news-card__date">
+					<img src="/assets/icons/date-icon.svg" alt="date icon">
+					<p>{{newsItem.publishedAt}}</p>
+				</div>
+				<h3 class="news-card__title">{{newsItem.title}}</h3>
+				<p class="news-card__text">{{newsItem.summary}}</p>
+				<p class="news-card__link">Read more -></p>
+			</div>
+		</a>
+	</div>
+
+	<ng-template #loader>
+		<app-loader></app-loader>
+	</ng-template>
+</div>

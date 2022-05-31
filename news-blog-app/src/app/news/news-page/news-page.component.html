@@ -5,7 +5,7 @@
 	<h3>Results: </h3>
 
 	<div class="news-cards" *ngIf="news$ | async as news; else loader">
-		<a [routerLink]="['/news', newsItem.id]" class="news-card" *ngFor="let newsItem of news">
+		<a [routerLink]="['/', newsItem.id]" class="news-card" *ngFor="let newsItem of news">
 			<div class="news-card__image">
 				<img [src]="newsItem.imageUrl" alt="news preview">
 			</div>

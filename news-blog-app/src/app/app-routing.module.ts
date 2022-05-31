@@ -1,3 +1,4 @@
+import { NewsPageComponent } from './news/news-page/news-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

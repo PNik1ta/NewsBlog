@@ -5,10 +5,10 @@ import { NgModule } from "@angular/core";
 
 const routes: Routes = [
 	{
-		path: 'news', component: NewsPageComponent,
+		path: '', component: NewsPageComponent,
 	},
 	{
-		path: 'news/:id', component: NewsDetailComponent
+		path: ':id', component: NewsDetailComponent
 	}
 ]
 
